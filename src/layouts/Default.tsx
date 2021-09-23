@@ -3,6 +3,7 @@ import { Box, Flex, VStack } from "@chakra-ui/layout";
 import Header from 'Components/Header';
 import { useBreakpointValue } from '@chakra-ui/media-query';
 import { useToken } from '@chakra-ui/system';
+import Footer from 'Components/Footer'
 
 export default function DefaultLayout(props: Parameters<typeof VStack>[0]) {
   const [sm] = useToken('space', ['32'])
@@ -14,7 +15,7 @@ export default function DefaultLayout(props: Parameters<typeof VStack>[0]) {
         '--page-px': px
       }}
       minW='100%' minH='100vh'
-      bgColor='gray.50'
+      bgColor='gray.100'
     >
       <Header/>
       <VStack
@@ -27,6 +28,7 @@ export default function DefaultLayout(props: Parameters<typeof VStack>[0]) {
         }}
         {...props}
       />
+      <Footer/>
     </Box>
   )
 }

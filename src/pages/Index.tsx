@@ -10,7 +10,7 @@ function Card(props: Parameters<typeof VStack>[0] & {
   const { title, desc, ...rest } = props
   return (
     <VStack 
-      bgColor="gray.100" shadow="md"
+      bgColor="gray.50" shadow="md"
       zIndex={1}
       {...rest}
     >
@@ -34,7 +34,7 @@ function FeedItem(props: Parameters<typeof HStack>[0] & {
     <HStack 
       px={3.5} py={3} bgColor="gray.600" 
       rounded="lg" spacing={5} color="white"
-      alignSelf="stretch"
+      alignSelf="stretch" shadow="base"
     >
       <Badge py={1.5} px={2.5} bgColor="blackAlpha.500" color="white" rounded="md">{type}</Badge>
       <VStack spacing={0} alignItems="flex-start" flexGrow={1}>
@@ -55,7 +55,7 @@ export default function IndexPage() {
         minH="xs"
       >
         <Heading variant="hero-title" as="h1">Pejabat Pengelola Informasi dan Dokumentasi</Heading>
-        <Heading variant="hero-subtitle" as="span">Ini subtitle...</Heading>
+        <Heading variant="hero-subtitle" as="span">Desa Digidesa, Kabupaten Digipaten</Heading>
       </VStack>
       <VStack 
         as="section" id="options"
@@ -97,9 +97,9 @@ export default function IndexPage() {
         justifyContent="center" bgColor="white"
         pb={10} pt={5}
       >
-        <Button>Ajukan Permintaan Informasi</Button>
-        <Button>Dasar Hukum PPID</Button>
-        <Button>Profil Desa</Button>
+        <Button variant="outline">Ajukan Permintaan Informasi</Button>
+        <Button variant="outline">Dasar Hukum PPID</Button>
+        <Button variant="outline">Profil Desa</Button>
       </HStack>
       <VStack
         as="section" id="feed"
@@ -115,7 +115,7 @@ export default function IndexPage() {
           <FeedItem title="Mekanisme Pengajuan Keberatan Informasi" date="Sabtu, 27 September 2021" type="Berkala"/>
           <FeedItem title="Mekanisme Pengajuan Keberatan Informasi" date="Sabtu, 27 September 2021" type="Berkala"/>
         </VStack>
-        <Button>Lihat Selengkapnya</Button>
+        <Button shadow="base" colorScheme="blackAlpha">Lihat Selengkapnya</Button>
       </VStack>
     </DefaultLayout>
   )

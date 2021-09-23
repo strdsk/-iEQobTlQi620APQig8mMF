@@ -1,5 +1,5 @@
 import { Image } from '@chakra-ui/image'
-import { Flex, HStack, Link, Spacer } from '@chakra-ui/layout'
+import { Box, Flex, HStack, Link, Spacer } from '@chakra-ui/layout'
 import { Link as RouterLink } from 'react-router-dom'
 import React from 'react'
 import Navbar from './Navbar'
@@ -11,7 +11,7 @@ export default function Header() {
       minH={20} shadow="md"
     >
       <Flex>
-        <Image></Image>
+        <Box width={52} bgColor="gray.500" height={16}></Box>
       </Flex>
       <Spacer/>
       <Navbar/>

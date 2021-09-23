@@ -18,6 +18,7 @@ export default function Navbar() {
     <HStack 
       as='nav' spacing={0}
       alignSelf="stretch" alignItems="stretch"
+      fontWeight="extrabold" fontSize="lg"
     >
       <NavLink to='/' children='Beranda'/>
       <NavLink to='/informasi' children='Informasi'/>

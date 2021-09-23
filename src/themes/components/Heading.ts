@@ -25,6 +25,10 @@ const Heading: StyleConfig = {
     'card-title': {
       fontWeight: 'bold',
       fontSize: 'xl'
+    },
+    'list-title': {
+      fontWeight: 'extrabold',
+      fontSize: 'lg'
     }
   }
 }
