@@ -2,40 +2,25 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-interface AppProps {}
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 
-function App({}: AppProps) {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Create the counter (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
+import theme from './themes'
+import Routes from './Route';
+
+function App() {
+   //@ts-ignore
+   // use BrowserRouter with SPA fallback if in dev mode, else HashRouter.
+  const Router: (p) => JSX.Element = __SNOWPACK_ENV__.MODE === 'development' ? BrowserRouter : HashRouter
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+    <ChakraProvider theme={theme}>
+      <Router> 
+        <Routes/>
+      </Router>
+    </ChakraProvider>
+  )
 }
 
 export default App;
+
+

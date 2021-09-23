@@ -1,5 +1,11 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 export default {
+  alias: {
+    Components: './src/components',
+    Pages: './src/pages',
+    States: './src/states',
+    Layouts: './src/layouts',
+  },
   mount: {
     public: { url: '/', static: true },
     src: { url: '/dist' },
@@ -17,7 +23,7 @@ export default {
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
-    // {"match": "routes", "src": ".*", "dest": "/index.html"},
+    {"match": "routes", "src": ".*", "dest": "/index.html"},
   ],
   optimize: {
     /* Example: Bundle your final build: */
